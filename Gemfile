@@ -42,9 +42,8 @@ end
 group :production do
   gem 'pg', '0.18.4'
 end
-group :sqlite3 do
-  gem 'sqlite3', '1.3.12'
-end
+
+  #gem 'sqlite3', '1.3.12'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
