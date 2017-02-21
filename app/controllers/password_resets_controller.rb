@@ -31,6 +31,9 @@ class PasswordResetsController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
   private
     def user_params
       params.require(:user).permit(:password, :password_confirmation)
@@ -46,6 +49,7 @@ class PasswordResetsController < ApplicationController
               @user.authenticated?(:reset, params[:id]))
         redirect_to root_url
     end
+    
     # Checks expiration of reset token.
     def check_expiration
       if @user.password_reset_expired?
@@ -55,6 +59,5 @@ class PasswordResetsController < ApplicationController
     end
   end
 
-  def edit
-  end
+
 end
